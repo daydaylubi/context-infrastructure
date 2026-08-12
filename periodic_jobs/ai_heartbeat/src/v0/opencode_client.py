@@ -1,25 +1,25 @@
 import base64
 import os
 import time
-from pathlib import Path
 
 import requests
 from dotenv import load_dotenv
 
-module_dir = Path(__file__).resolve().parent
-project_env_path = module_dir.parent.parent / ".env"
-legacy_env_path = module_dir.parent / ".env"
-if project_env_path.exists():
-    load_dotenv(project_env_path)
-else:
-    load_dotenv(legacy_env_path)
+from paths import ENV_PATH
+
+if ENV_PATH.exists():
+    load_dotenv(ENV_PATH)
 
 # Message timeout: agentic tasks can run 10–60+ min. Default 1 hour.
 MESSAGE_TIMEOUT = int(os.getenv("OPENCODE_MESSAGE_TIMEOUT", "3600"))
 
 class OpenCodeClient:
     def __init__(self):
-        self.base_url = os.getenv("OPENCODE_BASE_URL", "http://localhost:4096")
+        self.base_url = (
+            os.getenv("OPENCODE_BASE_URL")
+            or os.getenv("OPENCODE_API_URL")
+            or "http://localhost:4096"
+        )
         self.username = os.getenv("OPENCODE_USERNAME", "opencode")
         self.password = os.getenv("OPENCODE_PASSWORD")
 
