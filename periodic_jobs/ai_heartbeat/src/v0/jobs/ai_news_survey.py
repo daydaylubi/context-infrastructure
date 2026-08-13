@@ -11,7 +11,7 @@ except ImportError:
     print("Error: Could not import OpenCodeClient. Ensure path is correct.")
     sys.exit(1)
 
-def run_ai_news_survey(mode="weekly", model_id="anthropic/claude-opus-4-6", publish_to_kit=False):
+def run_ai_news_survey(mode="weekly", model_id="modelscope/Qwen/Qwen3.5-35B-A3B", publish_to_kit=False):
     """
     Delegates the AI News Survey and personalized report generation to the OpenCode Agent.
     Uses axiom-based evaluation framework for evidence-tiered, builder-focused reporting.
@@ -218,8 +218,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run AI news survey (daily or weekly)")
     parser.add_argument("--mode", "-m", choices=["daily", "weekly"], default="weekly",
                         help="Survey mode: 'daily' (1 day) or 'weekly' (7 days, default)")
-    parser.add_argument("--model", "-M", default="anthropic/claude-opus-4-6",
-                        help="OpenCode model ID (default: anthropic/claude-opus-4-6)")
+    parser.add_argument("--model", "-M", default="modelscope/Qwen/Qwen3.5-35B-A3B",
+                        help="OpenCode model ID (default: modelscope/Qwen/Qwen3.5-35B-A3B)")
     parser.add_argument("--publish-to-kit", "-k", action="store_true",
                         help="Publish newsletter to Kit subscribers instead of personal email")
     args = parser.parse_args()

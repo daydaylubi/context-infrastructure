@@ -15,16 +15,9 @@ MESSAGE_TIMEOUT = int(os.getenv("OPENCODE_MESSAGE_TIMEOUT", "3600"))
 
 class OpenCodeClient:
     def __init__(self):
-        self.base_url = (
-            os.getenv("OPENCODE_BASE_URL")
-            or os.getenv("OPENCODE_API_URL")
-            or "http://localhost:4096"
-        )
+        self.base_url = os.getenv("OPENCODE_BASE_URL", "http://localhost:4096")
         self.username = os.getenv("OPENCODE_USERNAME", "opencode")
-        self.password = os.getenv("OPENCODE_PASSWORD")
-
-        if not self.password:
-            raise ValueError("OPENCODE_PASSWORD not found in environment variables.")
+        self.password = os.getenv("OPENCODE_PASSWORD", "")
 
         credentials = f"{self.username}:{self.password}"
         encoded = base64.b64encode(credentials.encode()).decode()
@@ -94,7 +87,7 @@ class OpenCodeClient:
             time.sleep(poll_interval)
         return False
 
-    def send_message(self, session_id, message, model_id="antigravity-gemini-3-flash", provider_id=None, agent="OpenCode-Builder"):
+    def send_message(self, session_id, message, model_id="antigravity-gemini-3-flash", provider_id=None, agent="build"):
         try:
             # Auto-detect provider from model_id if not specified
             if provider_id is None:
