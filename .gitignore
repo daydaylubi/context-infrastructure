@@ -1,3 +1,5 @@
+# Vendored public skill repos (clone locally; see rules/skills/tavily.md)
+adhoc_jobs/tavily_skill/
 tmp/
 *.log
 .env

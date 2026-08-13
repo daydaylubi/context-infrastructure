@@ -27,7 +27,8 @@
 - ⚙️ Delayed Execution — starter fallback；durable/AI 延时任务安装 Process Launcher + OpenCode Skill
 
 ### Tier 3: 独立 public skill repos（按需安装）
-- 🔧 AI Session Export、ChatGPT/Codex OAuth、图片生成、Tavily、Google Docs、Google Maps、Outlook、Resend、OpenCode、Process Launcher、PPTX、Typefully、Circle Post、Stripe、Firewalla、Smart Home 等能力见 [`docs/SKILL_ECOSYSTEM.md`](../../docs/SKILL_ECOSYSTEM.md)
+- 🔧 [Tavily Web Search](./tavily.md) — [grapeot/tavily-skill](https://github.com/grapeot/tavily-skill)；安装 `bash adhoc_jobs/install_tavily_skill.sh`
+- 🔧 AI Session Export、ChatGPT/Codex OAuth、图片生成、Google Docs、Google Maps、Outlook、Resend、OpenCode、Process Launcher、PPTX、Typefully、Circle Post、Stripe、Firewalla、Smart Home 等能力见 [`docs/SKILL_ECOSYSTEM.md`](../../docs/SKILL_ECOSYSTEM.md)
 
 ### 说明
 ✅ = 最多 15 分钟即可使用
@@ -43,6 +44,7 @@
 调用外部系统或工具的操作手册。
 
 - [AI CLI Agent 实用指南](./ai_agent_cli_guide.md) — CLI Agent 设计原则、工具对比（Claude Code / Codex / OpenCode / Antigravity）、文件响应模式、AI 调用 AI
+- [Tavily Web Search](./tavily.md) 🔧 — 实时网页搜索与 URL 抽取；public repo + 本地 overlay，CLI 在 `adhoc_jobs/tavily_skill/`
 - [Antigravity CLI 文件式调用](./antigravity_cli.md) — 用 `agy --print` 调用 Gemini agent；覆盖首次安装、keyring/App 登录、sandbox、timeout、文件式结果与运行日志验收；含 external-writing task packet、跨模型候选、blind-reader、三种 verdict、一次 fresh 返工和 `completion_edits.md` 契约
 - [Claude Code 使用指南](./claude_code.md) — Claude Code 的默认 runtime 设置（adaptive thinking 规避）、非交互命令行调用、嵌套调用硬规则及 Timeout 管理
 - [OpenReview API](./openreview.md) — 查询 AI 学术会议论文 metadata 和作者 profile（institution history、position、tilde ID）。触发词："OpenReview"、"查作者 profile"、"ICLR papers"、"NeurIPS papers"、"tilde ID"
