@@ -1,6 +1,10 @@
 # Vendored public skill repos (clone locally; see rules/skills/tavily.md)
 adhoc_jobs/tavily_skill/
+adhoc_jobs/ai_session_export/
 tmp/
+
+# Private AI session export archive (real transcripts; never commit)
+contexts/ai_sessions/
 *.log
 .env
 .env.*
