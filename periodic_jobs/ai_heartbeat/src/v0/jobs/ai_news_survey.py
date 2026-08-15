@@ -112,7 +112,7 @@ def run_ai_news_survey(mode="weekly", model_id="modelscope/Qwen/Qwen3.5-35B-A3B"
 - 安全事件与漏洞
 - 监管政策与行业冲突
 
-重点关注：OpenAI, Anthropic, Google DeepMind, DeepSeek, NVIDIA, Meta, Groq 等。
+重点关注：OpenAI, Anthropic, Google DeepMind, NVIDIA, Meta, Groq，以及国内模型厂商 DeepSeek、智谱（Zhipu/GLM）、MiniMax、月之暗面（Moonshot/Kimi）等。
 
 **关键原则**：
 1. 每条信息采集后立即分类证据层级。不要等到写报告时才考虑可信度。
